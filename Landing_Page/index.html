@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HJ Wedding Planner | IT-1310 Final Project Landing Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-ring"></div>
+    <div class="loader-logo">HJ</div>
+  </div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Global Ambient Background Layer -->
+<div id="ambient-bg" aria-hidden="true">
+  <!-- CSS-animated petals: left-to-right drift with float -->
+  <div class="amb-petal amb-p1"></div>
+  <div class="amb-petal amb-p2"></div>
+  <div class="amb-petal amb-p3"></div>
+  <div class="amb-petal amb-p4"></div>
+  <div class="amb-petal amb-p5"></div>
+  <div class="amb-petal amb-p6"></div>
+  <div class="amb-petal amb-p7"></div>
+  <div class="amb-petal amb-p8"></div>
+  <div class="amb-petal amb-p9"></div>
+  <div class="amb-petal amb-p10"></div>
+  <!-- Leaves -->
+  <div class="amb-leaf amb-l1"></div>
+  <div class="amb-leaf amb-l2"></div>
+  <div class="amb-leaf amb-l3"></div>
+  <div class="amb-leaf amb-l4"></div>
+  <div class="amb-leaf amb-l5"></div>
+  <div class="amb-leaf amb-l6"></div>
+  <!-- Gold sparkles -->
+  <div class="amb-spark amb-s1"></div>
+  <div class="amb-spark amb-s2"></div>
+  <div class="amb-spark amb-s3"></div>
+  <div class="amb-spark amb-s4"></div>
+  <div class="amb-spark amb-s5"></div>
+  <div class="amb-spark amb-s6"></div>
+  <div class="amb-spark amb-s7"></div>
+  <div class="amb-spark amb-s8"></div>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="images/HJ_Logo.png" alt="HJ Wedding Planner logo" class="logo-image" />
+      <span class="logo-text">Wedding Planner</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#highlights">Preview</a></li>
+      <li><a href="#technical">Technical</a></li>
+      <li><a href="#documentation">Docs</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#deployment" class="nav-cta">Download</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero">
+  <div class="hero-bg">
+    <canvas id="leaf-canvas"></canvas>
+    <div class="hero-gradient"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge reveal-up">Mobile Wedding Planner</div>
+    <h1 class="hero-title reveal-up">
+      HJ Wedding Planner,<br />
+      <em>Presented with Purpose</em>
+    </h1>
+    <p class="hero-tagline reveal-up">A polished project landing page that showcases our app purpose, core features, technical implementation, documentation, and downloadable submission resources in one responsive experience.</p>
+    <div class="hero-actions reveal-up">
+      <a href="#documentation" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v14m0 0l-4-4m4 4l4-4M3 20h18"/></svg>
+        Download App
+      </a>
+      <a href="project-documentation.html" class="btn-ghost">Open Documentation</a>
+    </div>
+    <div class="hero-stats reveal-up">
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Team Members</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Core Modules</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">App Development Showcase</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Project Overview -->
+<section id="overview">
+  <div class="overview-bg-decor"></div>
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Project Overview</span>
+      <h2 class="section-title">A Final Project Designed to Make<br /><em>Wedding Planning Easier</em></h2>
+      <p class="section-sub">HJ Wedding Planner is a mobile-focused wedding planning system that helps couples compare packages, organize tasks, communicate with coordinators, and monitor booking progress in one guided workflow.</p>
+    </div>
+    <div class="overview-grid">
+      <article class="overview-card reveal-left">
+        <span class="overview-label">Purpose & Value</span>
+        <h3>One organized platform instead of scattered chats, notes, and booking updates.</h3>
+        <p>Our project solves a common problem for couples and coordinators: planning information is often spread across multiple apps and conversations. HJ Wedding Planner centralizes package browsing, task management, status tracking, and direct communication in a single mobile experience.</p>
+        <div class="overview-list">
+          <div><strong>Target users:</strong> Couples, coordinators, and event teams</div>
+          <div><strong>Main goal:</strong> Reduce planning stress through guided organization</div>
+          <div><strong>Outcome:</strong> Clearer decisions, faster coordination, better visibility</div>
+        </div>
+      </article>
+      <article class="overview-card reveal-right">
+        <span class="overview-label">Screens, Links & Resources</span>
+        <h3>Everything a reviewer needs is linked directly from the landing page.</h3>
+        <p>The project overview connects to the feature list, interface preview, technical summary, documentation file, and downloadable project package so the page works as both a showcase and a submission hub.</p>
+        <div class="overview-links">
+          <a href="#features">Explore Core Features</a>
+          <a href="#highlights">View Screen Preview</a>
+          <a href="project-documentation.html" target="_blank" rel="noopener">Open Documentation</a>
+          <a href="#deployment" download>Download Application</a>
+        </div>
+      </article>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Everything You Need</span>
+      <h2 class="section-title">Crafted for Your<br /><em>Perfect Day</em></h2>
+      <p class="section-sub">From curated packages to live coordination, every tool you need for a flawless wedding.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal-up" style="--delay:0s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Curated Wedding Packages</h3>
+        <p>Choose from Premium, Diamond, or Meteorite tiers — each crafted to deliver unmatched elegance and value.</p>
+        <div class="card-tags">
+          <span>Premium</span><span>Diamond</span><span>Meteorite</span>
+        </div>
+      </div>
+      <div class="feature-card reveal-up" style="--delay:.08s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Interactive Checklist</h3>
+        <p>Never miss a detail. Smart, prioritized to-do lists that adapt to your timeline and keep you on track.</p>
+        <div class="card-tags"><span>Smart Tasks</span><span>Reminders</span></div>
+      </div>
+      <div class="feature-card reveal-up" style="--delay:.16s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Real-Time Chat</h3>
+        <p>Communicate instantly with your entire coordination team. No calls, no delays — just seamless planning.</p>
+        <div class="card-tags"><span>Live Chat</span><span>Team Sync</span></div>
+      </div>
+      <div class="feature-card reveal-up" style="--delay:.24s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Live Booking Tracking</h3>
+        <p>Monitor every vendor, venue, and service booking in real time. Know the status of every detail instantly.</p>
+        <div class="card-tags"><span>Live Updates</span><span>Status Board</span></div>
+      </div>
+      <div class="feature-card reveal-up" style="--delay:.32s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/><rect x="3" y="3" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Package Comparison</h3>
+        <p>Side-by-side comparison of all packages with transparent pricing, inclusions, and upgrade options.</p>
+        <div class="card-tags"><span>Compare</span><span>Transparent</span></div>
+      </div>
+      <div class="feature-card feature-card--accent reveal-up" style="--delay:.4s">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="card-shine"></div>
+        <h3>Dedicated Coordination</h3>
+        <p>Your personal coordinator is always just a tap away — supporting you from engagement to the grand exit.</p>
+        <div class="card-tags"><span>Personal</span><span>24/7</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UI Highlights -->
+<section id="highlights">
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">App Preview</span>
+      <h2 class="section-title">Beautiful by Design,<br /><em>Powerful by Nature</em></h2>
+      <p class="section-sub">An interface as elegant as your wedding day — intuitive, refined, and always delightful to use.</p>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card reveal-up" style="--delay:0s">
+        <div class="mock-screen mock-dashboard">
+          <div class="mock-header">
+            <div class="mock-dot"></div>
+            <span>Dashboard</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-greeting">Good Morning, Couple ✨</div>
+            <div class="mock-countdown"><span class="countdown-num">87</span><span>days to go</span></div>
+            <div class="mock-progress-bar"><div class="mock-progress-fill" style="width:68%"></div></div>
+            <div class="mock-tasks">
+              <div class="mock-task done">✓ Venue Booked</div>
+              <div class="mock-task done">✓ Photographer Confirmed</div>
+              <div class="mock-task">○ Florist Selection</div>
+            </div>
+          </div>
+        </div>
+        <h4>Smart Dashboard</h4>
+        <p>Your wedding at a glance — countdown, progress, and tasks all in one place.</p>
+      </div>
+      <div class="highlight-card reveal-up" style="--delay:.1s">
+        <div class="mock-screen mock-gallery">
+          <div class="mock-header">
+            <div class="mock-dot"></div>
+            <span>Package Gallery</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-packages">
+              <div class="mock-pkg premium">
+                <div class="pkg-icon">⭐</div>
+                <div class="pkg-name">Premium</div>
+              </div>
+              <div class="mock-pkg diamond active">
+                <div class="pkg-icon">💎</div>
+                <div class="pkg-name">Diamond</div>
+                <div class="pkg-badge">Selected</div>
+              </div>
+              <div class="mock-pkg meteorite">
+                <div class="pkg-icon">☄️</div>
+                <div class="pkg-name">Meteorite</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4>Package Gallery</h4>
+        <p>Visually compare and select from our curated wedding packages.</p>
+      </div>
+      <div class="highlight-card reveal-up" style="--delay:.2s">
+        <div class="mock-screen mock-chat">
+          <div class="mock-header">
+            <div class="mock-dot"></div>
+            <span>Planning Room</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-msg coordinator">
+              <div class="msg-avatar">C</div>
+              <div class="msg-bubble">Hi! Your florist is confirmed for Saturday 🌸</div>
+            </div>
+            <div class="mock-msg user">
+              <div class="msg-bubble">Amazing! What time do they arrive?</div>
+            </div>
+            <div class="mock-msg coordinator">
+              <div class="msg-avatar">C</div>
+              <div class="msg-bubble">8 AM sharp. I'll send a reminder! 💐</div>
+            </div>
+            <div class="mock-input">
+              <span>Type a message...</span>
+              <div class="send-btn">➤</div>
+            </div>
+          </div>
+        </div>
+        <h4>Planning Room</h4>
+        <p>Direct coordination chat with your entire wedding team — always in sync.</p>
+      </div>
+      <div class="highlight-card reveal-up" style="--delay:.3s">
+        <div class="mock-screen mock-checklist">
+          <div class="mock-header">
+            <div class="mock-dot"></div>
+            <span>Smart Checklist</span>
+          </div>
+          <div class="mock-body">
+            <div class="check-section">
+              <div class="check-label">6 Months Before</div>
+              <div class="check-item done"><span>✓</span> Set your budget</div>
+              <div class="check-item done"><span>✓</span> Book your venue</div>
+            </div>
+            <div class="check-section">
+              <div class="check-label">3 Months Before</div>
+              <div class="check-item"><span>○</span> Send invitations</div>
+              <div class="check-item"><span>○</span> Finalize menu</div>
+            </div>
+          </div>
+        </div>
+        <h4>Smart Checklist</h4>
+        <p>Timeline-based to-dos so you always know exactly what to do next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technical Details -->
+<section id="technical">
+  <div class="technical-bg"></div>
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Technical Details</span>
+      <h2 class="section-title">Built with a Clear Stack,<br /><em>Architecture, and Process</em></h2>
+      <p class="section-sub">This section summarizes the technologies used in the landing page and mobile application, the high-level architecture behind the system, and the development workflow followed by the team.</p>
+    </div>
+    <div class="technical-grid">
+      <div class="technical-card reveal-up" style="--delay:0s">
+        <div class="technical-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        </div>
+        <h3>Tech Stack</h3>
+        <ul class="technical-list">
+          <li>Landing page built with HTML5, CSS3, and vanilla JavaScript</li>
+          <li>Mobile application designed for Android implementation</li>
+          <li>Java development workflow supported in Android Studio</li>
+          <li>Firebase-ready backend support for data, sync, and messaging</li>
+        </ul>
+      </div>
+      <div class="technical-card reveal-up" style="--delay:.08s">
+        <div class="technical-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Architecture</h3>
+        <ul class="technical-list">
+          <li>Presentation layer for onboarding, package browsing, and dashboard views</li>
+          <li>Application logic for checklist handling, booking flow, and notifications</li>
+          <li>Cloud-connected data layer for real-time chat, user records, and status updates</li>
+          <li>Modular structure that separates interface, business logic, and project resources</li>
+        </ul>
+      </div>
+      <div class="technical-card reveal-up" style="--delay:.16s">
+        <div class="technical-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Development Process</h3>
+        <ul class="technical-list">
+          <li>Requirement gathering based on wedding planning pain points and user needs</li>
+          <li>UI planning through wireframes, screen flow, and content mapping</li>
+          <li>Feature implementation for packages, messaging, checklist, and progress tracking</li>
+          <li>Iterative refinement through testing, feedback, and documentation updates</li>
+        </ul>
+      </div>
+      <div class="technical-card reveal-up" style="--delay:.24s">
+        <div class="technical-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+        </div>
+        <h3>Testing & Quality</h3>
+        <ul class="technical-list">
+          <li>QA review for usability, clarity, and interface consistency</li>
+          <li>Responsive checks across desktop and mobile screen widths</li>
+          <li>Content validation for links, sections, and documentation access</li>
+          <li>Final polishing for presentation, readability, and smooth interaction</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Documentation -->
+<section id="documentation">
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Documentation Access</span>
+      <h2 class="section-title">Well-Organized Project Files,<br /><em>Ready for Review</em></h2>
+      <p class="section-sub">The landing page now includes direct access to project documentation and downloadable submission files so evaluators can quickly review the system without searching through folders.</p>
+    </div>
+    <div class="docs-grid">
+      <article class="docs-card reveal-up" style="--delay:0s">
+        <span class="docs-label">Primary Document</span>
+        <h3>HTML Project Documentation</h3>
+        <p>A structured documentation page that summarizes the project overview, objectives, feature set, technical implementation, team responsibilities, and deployment notes.</p>
+        <div class="docs-actions">
+          <a href="project-documentation.html" target="_blank" rel="noopener" class="docs-link">Open Documentation</a>
+          <a href="project-documentation.html" download class="docs-link docs-link--soft">Download HTML File</a>
+        </div>
+      </article>
+      <article class="docs-card reveal-up" style="--delay:.08s">
+        <span class="docs-label">Included Resources</span>
+        <h3>What the Reviewer Can Access</h3>
+        <ul class="docs-list">
+          <li>Project purpose and problem statement</li>
+          <li>Core features and screen preview section</li>
+          <li>Technical stack, architecture, and process summary</li>
+          <li>Downloadable project package for local review</li>
+        </ul>
+      </article>
+      <article class="docs-card reveal-up" style="--delay:.16s">
+        <span class="docs-label">Navigation Shortcuts</span>
+        <h3>Fast Links Inside the Landing Page</h3>
+        <div class="overview-links docs-shortcuts">
+          <a href="#overview">Go to Overview</a>
+          <a href="#technical">Read Technical Details</a>
+          <a href="#team">Meet the Team</a>
+          <a href="#deployment">Open Download Center</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Deployment & Download -->
+<section id="deployment">
+  <div class="cta-bg">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <canvas id="cta-canvas"></canvas>
+  </div>
+  <div class="section-inner cta-inner">
+    <div class="cta-badge reveal-up">Submission Ready • Deployment & Downloads</div>
+    <h2 class="cta-title reveal-up">Open the Files,<br /><em>Review the Project, Download with Ease</em></h2>
+    <p class="cta-sub reveal-up">This section clearly presents the project resources required by the rubric, including documentation access, downloadable source files, and a simple local deployment note for presenting the landing page.</p>
+    <div class="cta-actions reveal-up">
+      <a href="HJ-Wedding-Planner-Project-Package.zip" download class="btn-playstore">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="M8 10l4 4 4-4"/><path d="M4 20h16"/></svg>
+        <div>
+          <span class="store-label">Download</span>
+          <span class="store-name">Application</span>
+        </div>
+      </a>
+      <a href="project-documentation.html" target="_blank" rel="noopener" class="btn-ghost btn-ghost--light">View Repository</a>
+    </div>
+    <div class="deployment-grid reveal-up">
+      <div class="deployment-card">
+        <span class="deployment-label">Local Deployment</span>
+        <p>Open <strong>index.html</strong> in any modern browser to present the landing page offline.</p>
+      </div>
+      <div class="deployment-card">
+        <span class="deployment-label">Documentation</span>
+        <p>The linked HTML documentation is included in the same folder for quick submission access.</p>
+      </div>
+      <div class="deployment-card">
+        <span class="deployment-label">Download Link</span>
+        <p>The packaged source archive is ready to download directly from this section.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team">
+  <div class="team-bg">
+    <div class="team-orb team-orb-1"></div>
+    <div class="team-orb team-orb-2"></div>
+  </div>
+  <div class="section-inner">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">The People Behind the Magic</span>
+      <h2 class="section-title">Meet Our<br /><em>Project Team</em></h2>
+      <p class="section-sub">A dedicated group of developers and creators who built HJ Wedding Planner with passion, precision, and purpose.</p>
+    </div>
+    <div class="team-cards-grid">
+
+      <!-- Cyrish Mae Gacasan -->
+      <div class="team-card reveal-up" style="--delay:0s">
+        <div class="tc-glow"></div>
+        <div class="tc-top">
+          <div class="tc-avatar">
+            <span class="tc-initials">CG</span>
+            <div class="tc-avatar-ring"></div>
+          </div>
+          <div class="tc-badge">01</div>
+        </div>
+        <div class="tc-body">
+          <h3 class="tc-name">Cyrish Mae Gacasan</h3>
+          <span class="tc-role">Project Manager / Documentation Lead</span>
+          <p class="tc-desc">Oversees project planning, timeline management, and team coordination. Ensures all deliverables are completed on time and aligned with project goals. Leads documentation creation and finalization.</p>
+          <div class="tc-skills">
+            <span>Project Management</span><span>Technical Writing</span><span>Leadership</span><span>Communication</span><span>Research</span><span>Formatting</span><span>Detail-Oriented</span>
+          </div>
+          <div class="tc-links">
+            <a href="https://github.com/miss-cycy" target="_blank" rel="noopener" class="tc-link tc-github">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.facebook.com/cyrish.gacasan" target="_blank" rel="noopener" class="tc-link tc-facebook">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jhib Lourence Rendon -->
+      <div class="team-card reveal-up" style="--delay:.08s">
+        <div class="tc-glow"></div>
+        <div class="tc-top">
+          <div class="tc-avatar tc-avatar--green">
+            <span class="tc-initials">JR</span>
+            <div class="tc-avatar-ring"></div>
+          </div>
+          <div class="tc-badge">02</div>
+        </div>
+        <div class="tc-body">
+          <h3 class="tc-name">Jhib Lourence Rendon</h3>
+          <span class="tc-role">Backend Developer / Main Programmer</span>
+          <p class="tc-desc">Responsible for core system functionality, backend logic, and data handling. Develops and maintains key features and ensures system performance and reliability.</p>
+          <div class="tc-skills">
+            <span>Java</span><span>Firebase</span><span>API Integration</span><span>Problem-Solving</span>
+          </div>
+          <div class="tc-links">
+            <a href="https://github.com/JhibRendon" target="_blank" rel="noopener" class="tc-link tc-github">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.facebook.com/jhiblourence.rendon" target="_blank" rel="noopener" class="tc-link tc-facebook">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Stephanie Jane Eleccion -->
+      <div class="team-card reveal-up" style="--delay:.16s">
+        <div class="tc-glow"></div>
+        <div class="tc-top">
+          <div class="tc-avatar tc-avatar--indigo">
+            <span class="tc-initials">SE</span>
+            <div class="tc-avatar-ring"></div>
+          </div>
+          <div class="tc-badge">03</div>
+        </div>
+        <div class="tc-body">
+          <h3 class="tc-name">Stephanie Jane Eleccion</h3>
+          <span class="tc-role">Lead Developer / System Architect</span>
+          <p class="tc-desc">Leads the development team, designs the overall system architecture, and ensures code quality. Makes key technical decisions and integrates different system components.</p>
+          <div class="tc-skills">
+            <span>System Design</span><span>Android Dev</span><span>Architecture</span><span>Leadership</span>
+          </div>
+          <div class="tc-links">
+            <a href="https://github.com/stephjx" target="_blank" rel="noopener" class="tc-link tc-github">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.facebook.com/itsstephjx/" target="_blank" rel="noopener" class="tc-link tc-facebook">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prixane Jade Gales -->
+      <div class="team-card reveal-up" style="--delay:.24s">
+        <div class="tc-glow"></div>
+        <div class="tc-top">
+          <a href="images/Pjade.jpg" target="_blank" rel="noopener" class="tc-avatar tc-avatar--amber tc-avatar-link">
+            <img src="images/Pjade.jpg" alt="Prixane Jade Gales" class="tc-avatar-image" />
+            <div class="tc-avatar-ring"></div>
+          </a>
+          <div class="tc-badge">04</div>
+        </div>
+        <div class="tc-body">
+          <h3 class="tc-name">Prixane Jade Gales</h3>
+          <span class="tc-role">Quality Assurance (QA) Engineer</span>
+          <p class="tc-desc">Tests the application for bugs, usability issues, and performance problems. Ensures the system meets quality standards before every release.</p>
+          <div class="tc-skills">
+            <span>Software Testing</span><span>Test Cases</span><span>Bug Tracking</span><span>Detail-Oriented</span>
+          </div>
+          <div class="tc-links">
+            <a href="https://github.com/Prxnjdyy" target="_blank" rel="noopener" class="tc-link tc-github">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.facebook.com/prixane.jade" target="_blank" rel="noopener" class="tc-link tc-facebook">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="images/HJ_Logo.png" alt="HJ Wedding Planner logo" class="logo-image" />
+        <span class="logo-text">Wedding Planner</span>
+      </div>
+      <p class="footer-tagline">Your dream wedding, perfectly planned<br />and beautifully executed.</p>
+      <a href="https://www.facebook.com/profile.php?id=100064771667953" target="_blank" rel="noopener" class="footer-social">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Follow us on Facebook
+      </a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-col">
+        <span class="footer-nav-label">Navigation</span>
+        <a href="#overview">Project Overview</a>
+        <a href="#features">Features</a>
+        <a href="#highlights">App Preview</a>
+        <a href="#technical">Technical Details</a>
+        <a href="#documentation">Documentation</a>
+        <a href="#deployment">Download Center</a>
+        <a href="#team">Our Team</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 HJ Wedding Events &amp; Coordination. All rights reserved. Built with ♥ by the HJ Team.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
