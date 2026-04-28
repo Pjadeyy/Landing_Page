@@ -1,0 +1,30 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "package.json",
+      "package-lock.json",
+      "firebase-debug.log",
+      "skills-lock.json",
+      "app-debug.apk",
+      "**/*.apk",
+      ".git/**",
+      "**/.git/**",
+      "no/**",
+      ".agents/**",
+      ".github/**",
+      ".vscode/**",
+      "node_modules/**",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

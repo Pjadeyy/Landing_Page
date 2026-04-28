@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HJ Wedding Planner | Project Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #b8965a;
+    --gold-dark: #8d6e39;
+    --sage: #587163;
+    --cream: #fbf6ee;
+    --cream-deep: #f2e7d6;
+    --white: #ffffff;
+    --ink: #231d17;
+    --text: #4d4438;
+    --muted: #766d63;
+    --line: rgba(184, 150, 90, 0.18);
+    --shadow: 0 18px 48px rgba(68, 49, 20, 0.12);
+    --radius: 24px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(88, 113, 99, 0.14), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(184, 150, 90, 0.14), transparent 28%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .wrap {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .hero,
+  .section {
+    padding: 26px 0;
+  }
+
+  .hero {
+    padding-top: 54px;
+  }
+
+  .card,
+  .hero-card,
+  .hero-visual,
+  .quick-link,
+  .download-card {
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-grid,
+  .grid,
+  .quick-grid,
+  .download-grid,
+  .stats {
+    display: grid;
+    gap: 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.35fr 0.9fr;
+    align-items: stretch;
+  }
+
+  .hero-card,
+  .hero-visual,
+  .card {
+    padding: 32px;
+  }
+
+  .eyebrow,
+  .mini-label {
+    display: inline-block;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+
+  .eyebrow {
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+
+  .mini-label {
+    color: var(--gold-dark);
+    margin-bottom: 10px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 14px;
+    font-family: 'Playfair Display', serif;
+    color: var(--ink);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 1.06;
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: 1.18rem;
+  }
+
+  p,
+  li {
+    line-height: 1.78;
+    color: var(--muted);
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+  }
+
+  .btn:hover,
+  .quick-link:hover,
+  .download-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #d2b075, #b8965a);
+    color: var(--white);
+    box-shadow: 0 10px 22px rgba(184, 150, 90, 0.24);
+  }
+
+  .btn-secondary {
+    background: rgba(88, 113, 99, 0.08);
+    border: 1px solid rgba(88, 113, 99, 0.18);
+    color: var(--sage);
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 26px;
+  }
+
+  .stat {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .stat strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-dark);
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.88)),
+      url("images/HJ_Logo.png") center/cover;
+    overflow: hidden;
+  }
+
+  .hero-note {
+    padding: 18px 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.84);
+    border: 1px solid var(--line);
+  }
+
+  .quick-grid,
+  .download-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-link,
+  .download-card {
+    display: block;
+    padding: 22px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .list-clean {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .list-clean li {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    background: rgba(251, 246, 238, 0.92);
+    border: 1px solid rgba(184, 150, 90, 0.12);
+    border-radius: 14px;
+  }
+
+  .checklist li {
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .checklist li::marker {
+    color: var(--gold-dark);
+  }
+
+  .footer {
+    padding: 26px 0 56px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 1080px) {
+    .hero-grid,
+    .grid,
+    .quick-grid,
+    .download-grid,
+    .stats {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .wrap {
+      width: min(100% - 24px, 1160px);
+    }
+
+    .hero {
+      padding-top: 28px;
+    }
+
+    .hero-grid,
+    .grid,
+    .quick-grid,
+    .download-grid,
+    .stats {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-card,
+    .hero-visual,
+    .card {
+      padding: 22px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <span class="eyebrow">IT-1310 Final Project Documentation</span>
+          <h1>HJ Wedding Planner Mobile Application</h1>
+          <p class="hero-copy">This documentation page presents the project overview, technical details, documentation access, and deployment information for the HJ Wedding Planner Mobile Application.</p>
+          <div class="hero-actions">
+            <a href="index.html" class="btn btn-primary">Open Landing Page</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>4</strong>Team Members</div>
+            <div class="stat"><strong>10+</strong>Core Features</div>
+            <div class="stat"><strong>Android</strong>Platform</div>
+            <div class="stat"><strong>HTML</strong>Documentation</div>
+          </div>
+        </div>
+        <aside class="hero-visual">
+          <div>
+            <span class="mini-label">Project Summary</span>
+            <h3>Clear, organized, submission-ready documentation</h3>
+            <p>This page is structured to make the project details, technical notes, and download materials easy to review.</p>
+          </div>
+          <div class="hero-note">
+            <span class="mini-label">Project Snapshot</span>
+            <p><strong>Client:</strong> HJ Wedding Event &amp; Coordination / Gownshop<br />
+            <strong>Version:</strong> 1.0<br />
+            <strong>Date:</strong> April 2026</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <span class="mini-label">Quick Access</span>
+        <h2>Reviewer Shortcuts</h2>
+        <div class="quick-grid">
+          <a class="quick-link" href="#project-overview">
+            <span class="mini-label">1</span>
+            <h3>Project Overview</h3>
+            <p>Purpose, problem statement, objectives, target audience, and core features.</p>
+          </a>
+          <a class="quick-link" href="#technical-details">
+            <span class="mini-label">2</span>
+            <h3>Technical Details</h3>
+            <p>Architecture, tools, roles, security approach, and technical implementation notes.</p>
+          </a>
+          <a class="quick-link" href="#deployment-info">
+            <span class="mini-label">3</span>
+            <h3>Deployment &amp; Download</h3>
+            <p>Documentation access, project package download, and prototype release notes.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project-overview">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Project Overview</span>
+          <h2>Project Overview</h2>
+          <p>HJ Wedding Planner Mobile Application is a wedding planning platform designed to make coordination faster, more organized, and easier for both clients and coordinators. It combines package browsing, gown selection, booking, appointment tracking, and direct communication in one mobile-focused system.</p>
+          <p>This project was prepared as part of the final term major activity for IT-1310 Application Development and Emerging Technologies.</p>
+        </article>
+        <article class="card">
+          <span class="mini-label">Purpose and Audience</span>
+          <h2>Why the Project Matters</h2>
+          <ul class="checklist">
+            <li>It solves the problem of scattered wedding planning information across chats, social media, and manual records.</li>
+            <li>It supports clients who need clearer booking, scheduling, and package information.</li>
+            <li>It supports coordinators who need better organization, communication, and appointment handling.</li>
+            <li>It is intended for developers, designers, testers, project stakeholders, and the proposed client.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Problem Statement</span>
+          <h2>Current Challenge</h2>
+          <p>Wedding planning often depends on manual scheduling and social media messaging. That setup can create delayed responses, disorganized records, overlapping schedules, and miscommunication between clients and coordinators.</p>
+          <p>The project addresses this with a centralized application for bookings, appointments, records, and messaging.</p>
+        </article>
+        <article class="card">
+          <span class="mini-label">Objectives</span>
+          <h2>Project Goals</h2>
+          <ul class="list-clean">
+            <li>Gather functional requirements from the client based on real-world needs.</li>
+            <li>Design the system architecture, interface, and workflow structure.</li>
+            <li>Develop the application through Android Studio using proper programming practices.</li>
+            <li>Test and improve reliability, usability, and overall system quality.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">User Features</span>
+          <h2>Core Client Functions</h2>
+          <ul class="checklist">
+            <li>User registration and authentication with email/password and Google Sign-In.</li>
+            <li>Viewing of wedding packages, pricing, inclusions, and service options.</li>
+            <li>Browsing of gown collections with design and style details.</li>
+            <li>Booking and appointment scheduling for chosen services and dates.</li>
+            <li>Real-time or near real-time communication with coordinators.</li>
+            <li>Calendar integration for tracking appointments and wedding deadlines.</li>
+            <li>Google Maps support for location assistance.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Admin Features</span>
+          <h2>Coordinator and Management Functions</h2>
+          <ul class="checklist">
+            <li>Manage wedding packages, pricing, inclusions, and availability.</li>
+            <li>Manage gown collections by adding, updating, and removing entries.</li>
+            <li>Monitor bookings and appointments and resolve schedule conflicts.</li>
+            <li>Handle client concerns and respond through the communication system.</li>
+            <li>Organize schedules for appointments, events, and coordination tasks.</li>
+            <li>Manage user accounts and system-side concerns securely.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="technical-details">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Technical Details</span>
+          <h2>Technical Details</h2>
+          <ul class="checklist">
+            <li><strong>Platform:</strong> Android mobile application.</li>
+            <li><strong>Development Tool:</strong> Android Studio.</li>
+            <li><strong>Backend Direction:</strong> Firebase services for authentication, synchronization, and messaging.</li>
+            <li><strong>Architecture:</strong> MVVM-based separation of user interface, logic, and data handling.</li>
+            <li><strong>Integrations:</strong> Google Sign-In, calendar tracking, and Google Maps support.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Development Process</span>
+          <h2>How the Project Was Built</h2>
+          <ul class="checklist">
+            <li>Requirements gathering from the client and project stakeholders.</li>
+            <li>UI/UX planning through wireframes, mockups, and workflow design.</li>
+            <li>Feature implementation for authentication, booking, messaging, and browsing.</li>
+            <li>Testing for usability, responsiveness, reliability, and error handling.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Architecture and Data</span>
+          <h2>System Structure</h2>
+          <ul class="checklist">
+            <li>The project includes admin and user data flow diagrams in the source documentation.</li>
+            <li>The database uses a unified <code>users</code> table with role-based access instead of separate user tables.</li>
+            <li>Modules are linked using fields such as <code>created_by</code>, <code>approved_by</code>, <code>responded_by</code>, and <code>managed_by</code>.</li>
+            <li>This structure supports scalability, maintainability, and cleaner user management.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Roles and Devices</span>
+          <h2>Implementation Notes</h2>
+          <ul class="checklist">
+            <li>User role supports package browsing, gown viewing, booking, and inquiries.</li>
+            <li>Administrator role supports package, booking, schedule, and account management.</li>
+            <li>The system targets Android devices and adapts to different screen sizes and resolutions.</li>
+            <li>A stable internet connection is needed for Firebase-backed real-time features.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Security and Privacy</span>
+          <h2>Protection of User Data</h2>
+          <ul class="checklist">
+            <li>Authentication supports email/password and Google Sign-In.</li>
+            <li>Authorization is role-based and enforced for protected features.</li>
+            <li>HTTPS is used for secure communication.</li>
+            <li>Stored credentials are protected through hashing or secure backend-managed storage.</li>
+            <li>The documentation aligns the project with the Data Privacy Act of 2012 in the Philippines.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Accessibility and Usability</span>
+          <h2>Design Quality Notes</h2>
+          <ul class="checklist">
+            <li>Readable fonts and consistent spacing improve clarity.</li>
+            <li>Touch-friendly controls reduce mobile input errors.</li>
+            <li>Clear navigation supports browsing, booking, chat, and schedule tracking.</li>
+            <li>Error prompts and user feedback help guide task completion.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="documentation-access">
+      <div class="card">
+        <span class="mini-label">Documentation Access</span>
+        <h2>Documentation Access</h2>
+        <p>This project includes organized HTML documentation for reviewer access. The file you are reading is the main documentation page, and it is supported by the project landing page and packaged submission files.</p>
+        <div class="quick-grid">
+          <a class="quick-link" href="project-documentation.html">
+            <span class="mini-label">HTML Documentation</span>
+            <h3>Open This Documentation</h3>
+            <p>Review the organized HTML file prepared for the final project submission.</p>
+          </a>
+          <a class="quick-link" href="index.html" target="_blank" rel="noopener">
+            <span class="mini-label">Landing Page</span>
+            <h3>Open Project Showcase</h3>
+            <p>View the landing page presentation that supports the final project submission.</p>
+          </a>
+          <a class="quick-link" href="HJ-Wedding-Planner-Project-Package.zip" download>
+            <span class="mini-label">Project Files</span>
+            <h3>Download Package</h3>
+            <p>Access the packaged submission files for local checking and backup review.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="deployment-info">
+      <div class="card">
+        <span class="mini-label">Deployment Information</span>
+        <h2>Deployment Information / Download Link</h2>
+        <p>The project is documented as a prototype deployment for academic demonstration. The current workspace includes a downloadable project package and this HTML documentation page. The source document also describes a release process using a signed APK or Android App Bundle exported from Android Studio after final testing.</p>
+        <div class="download-grid">
+          <a class="download-card" href="HJ-Wedding-Planner-Project-Package.zip" download>
+            <span class="mini-label">Primary Download</span>
+            <h3>Project Package ZIP</h3>
+            <p>Contains the landing page, documentation, styling, and supporting project files prepared for submission.</p>
+          </a>
+          <a class="download-card" href="project-documentation.html" download>
+            <span class="mini-label">Documentation File</span>
+            <h3>Download HTML Documentation</h3>
+            <p>Provides an offline copy of the organized documentation page for grading and review.</p>
+          </a>
+          <a class="download-card" href="index.html" target="_blank" rel="noopener">
+            <span class="mini-label">Live Review</span>
+            <h3>Open Landing Page</h3>
+            <p>Lets the reviewer inspect the visual project presentation before or after downloading the files.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Release Notes</span>
+          <h2>Prototype Rollout Plan</h2>
+          <ul class="checklist">
+            <li>Internal testing is completed first by the development team.</li>
+            <li>Limited review follows with the instructor, selected students, and client representatives.</li>
+            <li>Major issues are corrected before the final build is prepared.</li>
+            <li>The deployment approach simulates real-world release practice without requiring a public commercial launch.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Development Team</span>
+          <h2>People Behind the Project</h2>
+          <ul class="list-clean">
+            <li>Rendon, Jhib Lourence</li>
+            <li>Eleccion, Stephanie</li>
+            <li>Gales, Prixane Jade</li>
+            <li>Gacasan, Cyrish Mae</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <span class="mini-label">Glossary Highlights</span>
+          <h2>Key Technical Terms</h2>
+          <ul class="checklist">
+            <li><strong>API</strong>: rules that allow software systems to communicate.</li>
+            <li><strong>Authentication</strong>: verifying the identity of a user.</li>
+            <li><strong>Authorization</strong>: controlling what a verified user can do.</li>
+            <li><strong>Firebase</strong>: cloud platform for authentication, database, and storage services.</li>
+            <li><strong>MVVM</strong>: software architecture that separates UI, logic, and data handling.</li>
+            <li><strong>RBAC</strong>: role-based access control for system permissions.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="mini-label">Project Scope</span>
+          <h2>What the Documentation Covers</h2>
+          <ul class="checklist">
+            <li>System functionality and user/admin features.</li>
+            <li>Technical architecture and implementation direction.</li>
+            <li>Security, privacy, and role-based data access.</li>
+            <li>Deployment, release, and documentation deliverables.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">
+      HJ Wedding Planner Mobile Application • IT-1310 Application Development and Emerging Technologies
+    </div>
+  </div>
+</body>
+</html>
